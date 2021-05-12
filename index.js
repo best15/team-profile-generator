@@ -65,7 +65,7 @@ const intern_questions = [
     {
         type: 'input',
         name: 'internName',
-        message: 'Enter engineer name: '
+        message: 'Enter intern name: '
 
     },
     {
@@ -89,7 +89,8 @@ const intern_questions = [
 
 ];
 
-const showmenu = () => {
+
+const createEmployeeMenu = () => {
     const question = [
         {
             type: 'list',
@@ -102,23 +103,36 @@ const showmenu = () => {
     return inquirer.prompt(question);
 }
 
+const showmenu = () => {
+    createEmployeeMenu().then((answer) => {
+        createTeam(answer);
+    });
+}
+
+
+const createTeam = (answer) => {
+    console.log(answer.action);
+    if (answer.action === 'Engineer') {
+        inquirer.prompt(engineer_questions).then((data) => {
+            showmenu();
+        });
+
+    }
+    else if (answer.action === 'Intern') {
+        inquirer.prompt(intern_questions).then((data) => {
+            showmenu();
+        });
+
+    }
+    else {
+        process.exit();
+    }
+}
+
 inquirer.prompt(manager_questions).then((data) => {
 
     const emp_manager = new Manager(data.managername, data.id, data.email, data.officenumber);
-    showmenu().then((answer) => {
-        if (answer.action === 'Engineer') {
-            inquirer.prompt(engineer_questions).then((data) => { });
-        }
-        else if (answer.action === 'Intern') {
-            inquirer.prompt(intern_questions).then((data) => { });
-        }
-        else {
+    showmenu();
 
-        }
-    });
-
-
-
-
-})
+});
 
