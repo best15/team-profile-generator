@@ -8,35 +8,35 @@ describe("Intern", () => {
             .toEqual({ name: "sun", id: "004", email: "sun@email.com", school: "SWA" });
     });
 
-    // it("Returns engineer name when call getname()", () => {
-    //     const NewEngineer = new engineer("sam", "002", "sam@email.com", "sam-git");
-    //     expect(NewEngineer.getName()).toEqual('sam');
+    it("Returns intern name when call getname()", () => {
+        const NewIntern = new intern("sun", "004", "sun@email.com", "SWA");
+        expect(NewIntern.getName()).toEqual('sun');
 
-    // });
+    });
 
-    // it("Returns engineer id when call getId()", () => {
-    //     const NewEngineer = new engineer("sam", "002", "sam@email.com", "sam-git");
-    //     expect(NewEngineer.getId()).toEqual('002');
+    it("Returns intern id when call getId()", () => {
+        const NewIntern = new intern("sun", "004", "sun@email.com", "SWA");
+        expect(NewIntern.getId()).toEqual('004');
 
-    // });
+    });
 
-    // it("Returns engineer email when call getEmail()", () => {
-    //     const NewEngineer = new engineer("sam", "002", "sam@email.com", "sam-git");
-    //     expect(NewEngineer.getEmail()).toEqual('sam@email.com');
+    it("Returns intern email when call getEmail()", () => {
+        const NewIntern = new intern("sun", "004", "sun@email.com", "SWA");
+        expect(NewIntern.getEmail()).toEqual('sun@email.com');
 
-    // });
+    });
 
-    // it("Returns engineer github username  when call getGithub()", () => {
-    //     const NewEngineer = new engineer("sam", "002", "sam@email.com", "sam-git");
-    //     expect(NewEngineer.getGithub()).toEqual('sam-git');
+    it("Returns intern school  when call getschool()", () => {
+        const NewIntern = new intern("sun", "004", "sun@email.com", "SWA");
+        expect(NewIntern.getschool()).toEqual('SWA');
 
-    // });
+    });
 
-    // it("Returns 'Engineer'  when call getRole()", () => {
-    //     const NewEngineer = new engineer("sam", "002", "sam@email.com", "sam-git");
-    //     expect(NewEngineer.getRole()).toEqual('Engineer');
+    it("Returns 'Intern'  when call getRole()", () => {
+        const NewIntern = new intern("sun", "004", "sun@email.com", "SWA");
+        expect(NewIntern.getRole()).toEqual('Intern');
 
-    // });
+    });
 
 
 
