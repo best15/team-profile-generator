@@ -5,6 +5,11 @@ const Intern = require('./lib/intern');
 
 const inquirer = require("inquirer");
 
+empEngineers = [];
+empInterns = [];
+empManager = new Object();
+
+
 const manager_questions = [
     {
         type: 'input',
@@ -82,7 +87,7 @@ const intern_questions = [
     },
     {
         type: 'input',
-        name: 'intern',
+        name: 'school',
         message: 'Enter intern school name : '
 
     },
@@ -90,7 +95,7 @@ const intern_questions = [
 ];
 
 
-const createEmployeeMenu = () => {
+const addEmployeeMenu = () => {
     const question = [
         {
             type: 'list',
@@ -104,34 +109,38 @@ const createEmployeeMenu = () => {
 }
 
 const showmenu = () => {
-    createEmployeeMenu().then((answer) => {
+    addEmployeeMenu().then((answer) => {
         createTeam(answer);
     });
 }
 
 
 const createTeam = (answer) => {
-    console.log(answer.action);
+
     if (answer.action === 'Engineer') {
         inquirer.prompt(engineer_questions).then((data) => {
+            empEngineers.push(new Engineer(data.engineername, data.id, data.email, data.GithubUsername));
+
             showmenu();
         });
 
     }
     else if (answer.action === 'Intern') {
         inquirer.prompt(intern_questions).then((data) => {
+            empInterns.push(new Intern(data.internName, data.id, data.email, data.school));
             showmenu();
         });
 
     }
     else {
+        console.log(empEngineers, empInterns, empManager)
         process.exit();
     }
 }
 
 inquirer.prompt(manager_questions).then((data) => {
 
-    const emp_manager = new Manager(data.managername, data.id, data.email, data.officenumber);
+    empManager = new Manager(data.managername, data.id, data.email, data.officenumber);
     showmenu();
 
 });
