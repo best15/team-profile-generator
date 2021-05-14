@@ -153,8 +153,8 @@ inquirer.prompt(manager_questions).then((data) => {
 function writeFile(manager, engineers, interns) {
 
     const htmlfile = generateHtml(manager, engineers, interns);
-    console.log("154-htmlfile-------------", htmlfile);
-    fs.writeFile("./MyTeam.html", htmlfile, (err) => {
+
+    fs.writeFileSync("./MyTeam.html", htmlfile, (err) =>
         err ? console.log(err) : console.log("Team Profile Generated!!!!!")
-    })
+    );
 }
