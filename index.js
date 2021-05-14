@@ -3,6 +3,7 @@ const Manager = require('./lib/manager');
 const Engineer = require('./lib/engineer');
 const Intern = require('./lib/intern');
 
+const validator = require('validator');
 const generateHtml = require('./lib/generate-html');
 const fs = require('fs');
 const inquirer = require("inquirer");

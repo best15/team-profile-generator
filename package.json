@@ -19,6 +19,7 @@
   "homepage": "https://github.com/best15/team-profile-generator#readme",
   "dependencies": {
     "inquirer": "^8.0.0",
+    "node-input-validator": "^4.4.1",
     "prettier": "^2.3.0"
   },
   "devDependencies": {
