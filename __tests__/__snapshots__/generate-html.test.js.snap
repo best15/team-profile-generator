@@ -58,8 +58,12 @@ exports[`generate-html generates html with employee cards when employee detail i
             <p>Manager</p>
           </div>
           <ul class=\\"list-group list-group-flush\\">
-            <li class=\\"list-group-item\\">ID:001</li>
-            <li class=\\"list-group-item\\">Email:kshetri@email.com</li>
+            <li class=\\"list-group-item\\">ID: 001</li>
+            <li class=\\"list-group-item\\">
+              Email:<a href=\\"mailto:kshetri@email.com\\" target=\\"_blank\\">
+                kshetri@email.com</a
+              >
+            </li>
             <li class=\\"list-group-item\\">OfficeNumber: 04123456</li>
           </ul>
         </div>
@@ -70,9 +74,17 @@ exports[`generate-html generates html with employee cards when employee detail i
             <p>Engineer</p>
           </div>
           <ul class=\\"list-group list-group-flush\\">
-            <li class=\\"list-group-item\\">ID:002</li>
-            <li class=\\"list-group-item\\">Email:sam@email.com</li>
-            <li class=\\"list-group-item\\">GitHub: sam-git</li>
+            <li class=\\"list-group-item\\">ID: 002</li>
+            <li class=\\"list-group-item\\">
+              Email:<a href=\\"mailto:sam@email.com\\" target=\\"_blank\\">
+                sam@email.com</a
+              >
+            </li>
+            <li class=\\"list-group-item\\">
+              GitHub:<a href=\\"https://github.com/sam-git\\" target=\\"_blank\\">
+                sam-git
+              </a>
+            </li>
           </ul>
         </div>
 
@@ -82,8 +94,12 @@ exports[`generate-html generates html with employee cards when employee detail i
             <p>Intern</p>
           </div>
           <ul class=\\"list-group list-group-flush\\">
-            <li class=\\"list-group-item\\">ID:004</li>
-            <li class=\\"list-group-item\\">Email:sun@email.com</li>
+            <li class=\\"list-group-item\\">ID: 004</li>
+            <li class=\\"list-group-item\\">
+              Email:<a href=\\"mailto:sun@email.com\\" target=\\"_blank\\">
+                sun@email.com</a
+              >
+            </li>
             <li class=\\"list-group-item\\">School: SWA</li>
           </ul>
         </div>

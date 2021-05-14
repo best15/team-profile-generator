@@ -23,8 +23,8 @@ describe("generate-cards", () => {
                     <p> Manager </p>
                 </div>
                 <ul class="list-group list-group-flush">
-                    <li class="list-group-item">ID:1 </li>
-                    <li class="list-group-item">Email:manager@email.com</li>
+                    <li class="list-group-item">ID: 1 </li>
+                    <li class="list-group-item">Email:<a href="mailto:manager@email.com" target="_blank" > manager@email.com</a></li>
                     <li class="list-group-item">OfficeNumber: 0412345</li>
                 </ul>
             </div>
