@@ -3,11 +3,13 @@ const Manager = require('./lib/manager');
 const Engineer = require('./lib/engineer');
 const Intern = require('./lib/intern');
 
+const generateHtml = require('./lib/generate-html');
+const fs = require('fs');
 const inquirer = require("inquirer");
 
 empEngineers = [];
 empInterns = [];
-empManager = new Object();
+empManager = [];
 
 
 const manager_questions = [
@@ -128,20 +130,31 @@ const createTeam = (answer) => {
     else if (answer.action === 'Intern') {
         inquirer.prompt(intern_questions).then((data) => {
             empInterns.push(new Intern(data.internName, data.id, data.email, data.school));
+
             showmenu();
         });
 
     }
     else {
-        console.log(empEngineers, empInterns, empManager)
+
+        writeFile(empManager, empEngineers, empInterns);
         process.exit();
     }
 }
 
 inquirer.prompt(manager_questions).then((data) => {
 
-    empManager = new Manager(data.managername, data.id, data.email, data.officenumber);
+    empManager.push(new Manager(data.managername, data.id, data.email, data.officenumber));
+
     showmenu();
 
 });
 
+function writeFile(manager, engineers, interns) {
+
+    const htmlfile = generateHtml(manager, engineers, interns);
+    console.log("154-htmlfile-------------", htmlfile);
+    fs.writeFile("./MyTeam.html", htmlfile, (err) => {
+        err ? console.log(err) : console.log("Team Profile Generated!!!!!")
+    })
+}
