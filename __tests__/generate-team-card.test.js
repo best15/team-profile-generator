@@ -17,8 +17,8 @@ describe("generate-cards", () => {
     it("Create card when employee provide with  employee detail", () => {
         const empManager = new Manager("managerSahab", "1", "manager@email.com", "0412345");
         const expected = prettier.format(`
-            <div class="card col-sm-10 col-md-6 col-lg-2 mr-2 mb-3 p-0 ">
-                <div class="card-header bg-primary">
+            <div class="card col-sm-10 col-md-5 col-lg-3 mr-2 mb-3 p-0 ">
+                <div class="card-header bg-primary text-light">
                 <h3>managerSahab</h3>
                 <h5> <i class="fas fa-theater-masks"></i> Manager</h5>
                 </div>
