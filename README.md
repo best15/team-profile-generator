@@ -5,6 +5,6 @@ User's are requested with series of prompt's to enter name, id, email and other 
 
 Walkthrough Video Link:  https://drive.google.com/file/d/1JlAkomKxbdBl2jei0tbKqceKjsfg4pxC/view
 
-generated team profile link: [Team Profile](./MyTeam.html)
+Generated team profile page link: [Team Profile](https://best15.github.io/team-profile-generator/MyTeam.html)
 
 ![Team Profile Generator](./images/teamprofilegenerator.jpg)
